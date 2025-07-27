@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section Example (Apple/Tesla Style)</title>
+    <link rel="stylesheet" href="styled.css"> <!-- Fixed typo from "styled.css" -->
+</head>
+<body>
+    <section id="home" class="hero"> <!-- Added id for linking -->
+        <!-- Navigation (overlaid on hero background) -->
+        <nav class="nav">
+            <div class="logo">Figtee Academy</div>
+            <ul> <!-- Fixed desktop menu to match mobile for consistency -->
+                <li><a href="#home">Home</a></li>
+                <li><a href="#classes-section">Classes</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing-faq">Pricing</a></li> <!-- Combined pricing/faq section -->
+                <li><a href="#faq">FAQ</a></li> <!-- If separate, adjust -->
+            </ul>
+            <!-- Hamburger icon for mobile -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <!-- Mobile menu (overlays hero) -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li> <!-- Auto-close on click -->
+                <li><a href="#classes-section" onclick="toggleMenu()">Classes</a></li>
+                <li><a href="#how-it-works" onclick="toggleMenu()">How It Works</a></li>
+                <li><a href="#testimonials" onclick="toggleMenu()">Testimonials</a></li>
+                <li><a href="#pricing-faq" onclick="toggleMenu()">Pricing</a></li>
+                <li><a href="#faq" onclick="toggleMenu()">FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Hero content (overlaid on background) -->
+        <h1>Mobile Classes</h1>
+        <p>for Distance Learning.</p>
+        <div class="cta-buttons">
+            <a href="#" class="cta">Learn More</a>
+            <a href="#" class="cta">Enrol Now</a>
+        </div>
+    </section>
+
+    <section id="classes-section" class="classes-section"> <!-- Added id -->
+        <h2>Explore Our Subjects</h2>
+        <div class="classes-scroll">
+            <!-- Subject cards -->
+            <div class="class-card">
+                <h3>Mathematics</h3>
+                <button class="btn-enrol">Enrol</button>
+                <button class="btn-demo" onclick="playDemo('math-demo.mp4')">Watch Demo</button>
+            </div>
+            <div class="class-card">
+                <h3>Combined Science</h3>
+                <button class="btn-enrol">Enrol</button>
+                <button class="btn-demo" onclick="playDemo('science-demo.mp4')">Watch Demo</button>
+            </div>
+            <div class="class-card">
+                <h3>English</h3>
+                <button class="btn-enrol">Enrol</button>
+                <button class="btn-demo" onclick="playDemo('english-demo.mp4')">Watch Demo</button>
+            </div>
+            <div class="class-card">
+                <h3>Heritage Studies</h3>
+                <button class="btn-enrol">Enrol</button>
+                <button class="btn-demo" onclick="playDemo('ict-demo.mp4')">Watch Demo</button>
+            </div>
+            <div class="class-card">
+                <h3>Commerce</h3>
+                <button class="btn-enrol">Enrol</button>
+                <button class="btn-demo" onclick="playDemo('commerce-demo.mp4')">Watch Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works"> <!-- Added id -->
+        <h2>How Mobile Learning Works</h2>
+        <div class="steps-container">
+            <div class="step" style="--i: 1;">
+                <div class="icon">📅</div>
+                <h3>Enrol & Get Your Schedule</h3>
+                <p>Sign up and receive a personalised timetable for your lessons.</p>
+            </div>
+            <div class="step" style="--i: 2;">
+                <div class="icon">📲</div>
+                <h3>Download Lessons</h3>
+                <p>Open a topic, download videos and notes from the app.</p>
+            </div>
+            <div class="step" style="--i: 3;">
+                <div class="icon">📘</div>
+                <h3>Study & Practise</h3>
+                <p>Watch, revise, and complete exercises in your notebook.</p>
+            </div>
+            <div class="step" style="--i: 4;">
+                <div class="icon">📷</div>
+                <h3>Submit & Get Feedback</h3>
+                <p>Send exercise photos via WhatsApp and receive feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials"> <!-- Added id -->
+        <h2>What Our Students Say</h2>
+        <div class="testimonials-scroll">
+            <div class="testimonial-card">
+                <p>"The lessons are clear and easy to follow. I love the schedule reminders!"</p>
+                <span>— Tariro M.</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"Being able to download videos and learn anytime has helped me improve fast."</p>
+                <span>— Nyasha K.</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"The WhatsApp feedback makes it feel like I have a real tutor every day."</p>
+                <span>— Blessing T.</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"I passed my Maths test because I practised exactly how the app guided me."</p>
+                <span>— Kuda N.</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"This is the future of education in Zimbabwe!"</p>
+                <span>— Anesu R.</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing-faq" class="pricing-faq"> <!-- Added id (covers both pricing and FAQ) -->
+        <div class="pricing-box">
+            <h2>Affordable Plans</h2>
+            <p class="price-highlight">Termly Plans (3 months):</p>
+            <ul class="benefits-list">
+                <li>1 Subject — <strong>$30</strong></li>
+                <li>2 Subjects — <strong>$60</strong></li>
+                <li>3 Subjects — <strong>$80</strong></li>
+                <li>4 Subjects — <strong>$100</strong></li>
+                <li>5 Subjects — <strong>$130</strong></li>
+            </ul>
+
+            <p class="sub-highlight">Or Pay Monthly: <strong>$11 / subject</strong></p>
+
+            <p class="payment-methods">
+                <strong>Payment Methods:</strong><br>
+                🇿🇼 EcoCash (Local)<br>
+                🌍 Mukuru / World Remit (Diaspora)
+            </p>
+
+            <a href="#" class="cta enrol-now-btn">Enrol Now</a>
+        </div>
+
+        <div id="faq" class="faq-box"> <!-- Added id for direct linking -->
+            <h2>FAQs</h2>
+            <div class="faq-item">
+                <h4>When can I start?</h4>
+                <p>You can start any day. The learning schedule adapts to your enrolment date.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Where are you located?</h4>
+                <p>We are based in Harare, Zimbabwe.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you offer physical classes?</h4>
+                <p>Yes — but only for school students. Adult learners use our mobile-based learning system with WhatsApp support.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I pay?</h4>
+                <p>You’ll receive full payment instructions after clicking "Enrol", including local and diaspora options.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I download the lessons?</h4>
+                <p>Yes. All lessons and notes can be downloaded for offline learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="logo.jpeg" alt="Figtree Academy Logo" class="site-logo" loading="lazy" /> <!-- Added loading="lazy" and alt -->
+                <p>Empowering learners through mobile education.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#classes-section">Classes</a> <!-- Fixed to match id -->
+                <a href="#how-it-works">How It Works</a>
+                <a href="#testimonials">Testimonials</a> <!-- Added to match -->
+                <a href="#pricing-faq">Pricing</a>
+            </div>
+
+            <div class="footer-contact">
+                <p><strong>Contact:</strong> +263 783 607 912 // +263 733 796 118</p>
+                <p><strong>Email:</strong> info@figtreeacademy.co.zw</p>
+                <p><strong>Location:</strong> 17 Chummy Pitch, St Martins, Harare</p>
+            </div>
+
+            <div class="footer-payments">
+                <p><strong>Payments:</strong></p>
+                <p>EcoCash (Local)</p>
+                <p>Mukuru / World Remit (Diaspora)</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://wa.me/263733796118" target="_blank" rel="noopener noreferrer">📱 WhatsApp Us</a> <!-- Added rel for security -->
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Figtree Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Video Player -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <video id="demoVideo" controls></video>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
